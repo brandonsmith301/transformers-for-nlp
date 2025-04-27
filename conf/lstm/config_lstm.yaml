@@ -1,0 +1,56 @@
+defaults:
+  - override /hydra/job_logging: disabled
+  - override /hydra/hydra_logging: disabled
+
+hydra:
+    output_subdir: null
+    run:
+        dir: .
+
+seed: 330
+data_path: "./input"
+
+model:
+    name: "lstm_classifier"
+    vocab_size: 30522
+    hidden_size: 768
+    pad_token_id: 0
+    num_labels: 2
+    lstm_hidden_size: 512
+    lstm_num_layers: 2
+    lstm_dropout: 0.2
+    lstm_bidirectional: True
+
+tokenizer:
+    name: "bert-base-uncased"
+    max_len: 512
+    max_seq_len: 512
+    add_special_tokens: True
+
+dataset:
+    tokenizer_path: "bert-base-uncased"
+    use_fast: true
+    padding_side: "right"
+    truncation_side: "right"
+    max_length: 512
+
+training:
+    num_epochs: 10
+    batch_size: 16
+    gradient_accumulation_steps: 1
+    max_grad_norm: 1.0
+    warmup_pct: 0.1
+    eval_frequency: 100
+    patience: 5
+    save_trigger: 0.70
+    use_mask_aug: false
+    mask_aug_prob: 0.15
+
+optimizer:
+    name: "adamw"
+    lr: 1e-4
+    weight_decay: 0.01
+
+outputs:
+    model_dir: "outputs/lstm/lstm"
+    log_dir: "outputs/lstm/lstm_logs"

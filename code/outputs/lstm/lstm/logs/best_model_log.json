@@ -1,0 +1,817 @@
+{
+  "model_type": "lstm",
+  "config": {
+    "seed": 330,
+    "data_path": "./input",
+    "model": {
+      "name": "lstm_classifier",
+      "vocab_size": 30522,
+      "hidden_size": 768,
+      "pad_token_id": 0,
+      "num_labels": 2,
+      "lstm_hidden_size": 512,
+      "lstm_num_layers": 2,
+      "lstm_dropout": 0.2,
+      "lstm_bidirectional": true
+    },
+    "tokenizer": {
+      "name": "bert-base-uncased",
+      "max_len": 512,
+      "max_seq_len": 512,
+      "add_special_tokens": true
+    },
+    "dataset": {
+      "tokenizer_path": "bert-base-uncased",
+      "use_fast": true,
+      "padding_side": "right",
+      "truncation_side": "right",
+      "max_length": 512
+    },
+    "training": {
+      "num_epochs": 10,
+      "batch_size": 16,
+      "gradient_accumulation_steps": 1,
+      "max_grad_norm": 1.0,
+      "warmup_pct": 0.1,
+      "eval_frequency": 100,
+      "patience": 5,
+      "save_trigger": 0.7,
+      "use_mask_aug": false,
+      "mask_aug_prob": 0.15
+    },
+    "optimizer": {
+      "name": "adamw",
+      "lr": 0.0001,
+      "weight_decay": 0.01
+    },
+    "outputs": {
+      "model_dir": "outputs/lstm/lstm",
+      "log_dir": "outputs/lstm/lstm_logs"
+    }
+  },
+  "training_history": [
+    {
+      "epoch": 1,
+      "step": 99,
+      "total_step": 100,
+      "time_elapsed": "00:42",
+      "accuracy": 0.5206,
+      "scores": {
+        "accuracy": 0.5206
+      },
+      "learning_rate": 6.397952655150352e-06,
+      "loss": 0.69386962890625
+    },
+    {
+      "epoch": 1,
+      "step": 199,
+      "total_step": 200,
+      "time_elapsed": "01:24",
+      "accuracy": 0.5207,
+      "scores": {
+        "accuracy": 0.5207
+      },
+      "learning_rate": 1.2795905310300704e-05,
+      "loss": 0.693453369140625
+    },
+    {
+      "epoch": 1,
+      "step": 299,
+      "total_step": 300,
+      "time_elapsed": "02:06",
+      "accuracy": 0.5334,
+      "scores": {
+        "accuracy": 0.5334
+      },
+      "learning_rate": 1.9193857965451055e-05,
+      "loss": 0.6929182942708333
+    },
+    {
+      "epoch": 1,
+      "step": 399,
+      "total_step": 400,
+      "time_elapsed": "02:47",
+      "accuracy": 0.5207,
+      "scores": {
+        "accuracy": 0.5207
+      },
+      "learning_rate": 2.5591810620601408e-05,
+      "loss": 0.69216552734375
+    },
+    {
+      "epoch": 1,
+      "step": 499,
+      "total_step": 500,
+      "time_elapsed": "03:29",
+      "accuracy": 0.5255,
+      "scores": {
+        "accuracy": 0.5255
+      },
+      "learning_rate": 3.198976327575176e-05,
+      "loss": 0.691650390625
+    },
+    {
+      "epoch": 1,
+      "step": 599,
+      "total_step": 600,
+      "time_elapsed": "04:11",
+      "accuracy": 0.5632,
+      "scores": {
+        "accuracy": 0.5632
+      },
+      "learning_rate": 3.838771593090211e-05,
+      "loss": 0.6898239135742188
+    },
+    {
+      "epoch": 1,
+      "step": 699,
+      "total_step": 700,
+      "time_elapsed": "04:53",
+      "accuracy": 0.5805,
+      "scores": {
+        "accuracy": 0.5805
+      },
+      "learning_rate": 4.478566858605247e-05,
+      "loss": 0.6885210309709822
+    },
+    {
+      "epoch": 1,
+      "step": 799,
+      "total_step": 800,
+      "time_elapsed": "05:37",
+      "accuracy": 0.6222,
+      "scores": {
+        "accuracy": 0.6222
+      },
+      "learning_rate": 5.1183621241202816e-05,
+      "loss": 0.6849034881591797
+    },
+    {
+      "epoch": 1,
+      "step": 899,
+      "total_step": 900,
+      "time_elapsed": "06:26",
+      "accuracy": 0.6219,
+      "scores": {
+        "accuracy": 0.6219
+      },
+      "learning_rate": 5.758157389635317e-05,
+      "loss": 0.6789495849609375
+    },
+    {
+      "epoch": 1,
+      "step": 999,
+      "total_step": 1000,
+      "time_elapsed": "07:10",
+      "accuracy": 0.6631,
+      "scores": {
+        "accuracy": 0.6631
+      },
+      "learning_rate": 6.397952655150352e-05,
+      "loss": 0.6741219787597656
+    },
+    {
+      "epoch": 1,
+      "step": 1099,
+      "total_step": 1100,
+      "time_elapsed": "07:53",
+      "accuracy": 0.6425,
+      "scores": {
+        "accuracy": 0.6425
+      },
+      "learning_rate": 7.037747920665387e-05,
+      "loss": 0.6677538507634944
+    },
+    {
+      "epoch": 1,
+      "step": 1199,
+      "total_step": 1200,
+      "time_elapsed": "08:35",
+      "accuracy": 0.714,
+      "scores": {
+        "accuracy": 0.714
+      },
+      "learning_rate": 7.677543186180422e-05,
+      "loss": 0.6616226704915364
+    },
+    {
+      "epoch": 1,
+      "step": 1299,
+      "total_step": 1300,
+      "time_elapsed": "09:15",
+      "accuracy": 0.718,
+      "scores": {
+        "accuracy": 0.718
+      },
+      "learning_rate": 8.317338451695458e-05,
+      "loss": 0.6544351783165565
+    },
+    {
+      "epoch": 1,
+      "step": 1399,
+      "total_step": 1400,
+      "time_elapsed": "09:58",
+      "accuracy": 0.7322,
+      "scores": {
+        "accuracy": 0.7322
+      },
+      "learning_rate": 8.957133717210493e-05,
+      "loss": 0.6461266217912947
+    },
+    {
+      "epoch": 1,
+      "step": 1499,
+      "total_step": 1500,
+      "time_elapsed": "10:40",
+      "accuracy": 0.7057,
+      "scores": {
+        "accuracy": 0.7057
+      },
+      "learning_rate": 9.596928982725528e-05,
+      "loss": 0.642286885579427
+    },
+    {
+      "epoch": 2,
+      "step": 36,
+      "total_step": 1600,
+      "time_elapsed": "11:22",
+      "accuracy": 0.686,
+      "scores": {
+        "accuracy": 0.686
+      },
+      "learning_rate": 9.999829298335425e-05,
+      "loss": 0.5319772668786951
+    },
+    {
+      "epoch": 2,
+      "step": 136,
+      "total_step": 1700,
+      "time_elapsed": "12:03",
+      "accuracy": 0.7268,
+      "scores": {
+        "accuracy": 0.7268
+      },
+      "learning_rate": 9.997659848181557e-05,
+      "loss": 0.5193928628072252
+    },
+    {
+      "epoch": 2,
+      "step": 236,
+      "total_step": 1800,
+      "time_elapsed": "12:46",
+      "accuracy": 0.7422,
+      "scores": {
+        "accuracy": 0.7422
+      },
+      "learning_rate": 9.992997839221947e-05,
+      "loss": 0.5238720213813621
+    },
+    {
+      "epoch": 2,
+      "step": 336,
+      "total_step": 1900,
+      "time_elapsed": "13:28",
+      "accuracy": 0.7063,
+      "scores": {
+        "accuracy": 0.7063
+      },
+      "learning_rate": 9.985845596611132e-05,
+      "loss": 0.5274475505161003
+    },
+    {
+      "epoch": 2,
+      "step": 436,
+      "total_step": 2000,
+      "time_elapsed": "14:11",
+      "accuracy": 0.7631,
+      "scores": {
+        "accuracy": 0.7631
+      },
+      "learning_rate": 9.976206687495707e-05,
+      "loss": 0.5215468243003164
+    },
+    {
+      "epoch": 2,
+      "step": 536,
+      "total_step": 2100,
+      "time_elapsed": "14:53",
+      "accuracy": 0.752,
+      "scores": {
+        "accuracy": 0.752
+      },
+      "learning_rate": 9.964085919235218e-05,
+      "loss": 0.5177538283932365
+    },
+    {
+      "epoch": 2,
+      "step": 636,
+      "total_step": 2200,
+      "time_elapsed": "15:35",
+      "accuracy": 0.77,
+      "scores": {
+        "accuracy": 0.77
+      },
+      "learning_rate": 9.949489337004524e-05,
+      "loss": 0.5114960603100165
+    },
+    {
+      "epoch": 2,
+      "step": 736,
+      "total_step": 2300,
+      "time_elapsed": "16:17",
+      "accuracy": 0.7504,
+      "scores": {
+        "accuracy": 0.7504
+      },
+      "learning_rate": 9.93242422077879e-05,
+      "loss": 0.5078202639700115
+    },
+    {
+      "epoch": 2,
+      "step": 836,
+      "total_step": 2400,
+      "time_elapsed": "16:59",
+      "accuracy": 0.7746,
+      "scores": {
+        "accuracy": 0.7746
+      },
+      "learning_rate": 9.912899081702633e-05,
+      "loss": 0.5069622919408509
+    },
+    {
+      "epoch": 2,
+      "step": 936,
+      "total_step": 2500,
+      "time_elapsed": "17:41",
+      "accuracy": 0.7379,
+      "scores": {
+        "accuracy": 0.7379
+      },
+      "learning_rate": 9.890923657845233e-05,
+      "loss": 0.5053338750067744
+    },
+    {
+      "epoch": 2,
+      "step": 1036,
+      "total_step": 2600,
+      "time_elapsed": "18:23",
+      "accuracy": 0.7666,
+      "scores": {
+        "accuracy": 0.7666
+      },
+      "learning_rate": 9.866508909343516e-05,
+      "loss": 0.503468608212448
+    },
+    {
+      "epoch": 2,
+      "step": 1136,
+      "total_step": 2700,
+      "time_elapsed": "19:05",
+      "accuracy": 0.7696,
+      "scores": {
+        "accuracy": 0.7696
+      },
+      "learning_rate": 9.839667012935839e-05,
+      "loss": 0.4996172285121894
+    },
+    {
+      "epoch": 2,
+      "step": 1236,
+      "total_step": 2800,
+      "time_elapsed": "19:47",
+      "accuracy": 0.795,
+      "scores": {
+        "accuracy": 0.795
+      },
+      "learning_rate": 9.810411355888897e-05,
+      "loss": 0.4952075005348594
+    },
+    {
+      "epoch": 2,
+      "step": 1336,
+      "total_step": 2900,
+      "time_elapsed": "20:29",
+      "accuracy": 0.7895,
+      "scores": {
+        "accuracy": 0.7895
+      },
+      "learning_rate": 9.7787565293209e-05,
+      "loss": 0.49315504931476284
+    },
+    {
+      "epoch": 2,
+      "step": 1436,
+      "total_step": 3000,
+      "time_elapsed": "21:12",
+      "accuracy": 0.7835,
+      "scores": {
+        "accuracy": 0.7835
+      },
+      "learning_rate": 9.744718320924307e-05,
+      "loss": 0.4910599928227413
+    },
+    {
+      "epoch": 2,
+      "step": 1536,
+      "total_step": 3100,
+      "time_elapsed": "21:55",
+      "accuracy": 0.8078,
+      "scores": {
+        "accuracy": 0.8078
+      },
+      "learning_rate": 9.708313707091795e-05,
+      "loss": 0.48720760754974307
+    },
+    {
+      "epoch": 3,
+      "step": 73,
+      "total_step": 3200,
+      "time_elapsed": "22:37",
+      "accuracy": 0.8106,
+      "scores": {
+        "accuracy": 0.8106
+      },
+      "learning_rate": 9.669560844449377e-05,
+      "loss": 0.34789492632891683
+    },
+    {
+      "epoch": 3,
+      "step": 173,
+      "total_step": 3300,
+      "time_elapsed": "23:20",
+      "accuracy": 0.7996,
+      "scores": {
+        "accuracy": 0.7996
+      },
+      "learning_rate": 9.628479060800855e-05,
+      "loss": 0.35929883759597253
+    },
+    {
+      "epoch": 3,
+      "step": 273,
+      "total_step": 3400,
+      "time_elapsed": "24:02",
+      "accuracy": 0.8019,
+      "scores": {
+        "accuracy": 0.8019
+      },
+      "learning_rate": 9.585088845488182e-05,
+      "loss": 0.37993789937374367
+    },
+    {
+      "epoch": 3,
+      "step": 373,
+      "total_step": 3500,
+      "time_elapsed": "24:45",
+      "accuracy": 0.807,
+      "scores": {
+        "accuracy": 0.807
+      },
+      "learning_rate": 9.539411839172495e-05,
+      "loss": 0.3906329940347111
+    },
+    {
+      "epoch": 3,
+      "step": 473,
+      "total_step": 3600,
+      "time_elapsed": "25:27",
+      "accuracy": 0.8192,
+      "scores": {
+        "accuracy": 0.8192
+      },
+      "learning_rate": 9.491470823040944e-05,
+      "loss": 0.3898851720592644
+    },
+    {
+      "epoch": 3,
+      "step": 573,
+      "total_step": 3700,
+      "time_elapsed": "26:09",
+      "accuracy": 0.7967,
+      "scores": {
+        "accuracy": 0.7967
+      },
+      "learning_rate": 9.441289707444686e-05,
+      "loss": 0.3963519488477541
+    },
+    {
+      "epoch": 3,
+      "step": 673,
+      "total_step": 3800,
+      "time_elapsed": "26:52",
+      "accuracy": 0.8048,
+      "scores": {
+        "accuracy": 0.8048
+      },
+      "learning_rate": 9.388893519973702e-05,
+      "loss": 0.389829059736665
+    },
+    {
+      "epoch": 3,
+      "step": 773,
+      "total_step": 3900,
+      "time_elapsed": "27:34",
+      "accuracy": 0.8066,
+      "scores": {
+        "accuracy": 0.8066
+      },
+      "learning_rate": 9.334308392974417e-05,
+      "loss": 0.38579919479922115
+    },
+    {
+      "epoch": 3,
+      "step": 873,
+      "total_step": 4000,
+      "time_elapsed": "28:17",
+      "accuracy": 0.8223,
+      "scores": {
+        "accuracy": 0.8223
+      },
+      "learning_rate": 9.277561550516316e-05,
+      "loss": 0.3880146460893225
+    },
+    {
+      "epoch": 3,
+      "step": 973,
+      "total_step": 4100,
+      "time_elapsed": "28:59",
+      "accuracy": 0.7726,
+      "scores": {
+        "accuracy": 0.7726
+      },
+      "learning_rate": 9.218681294814069e-05,
+      "loss": 0.3916625986353817
+    },
+    {
+      "epoch": 3,
+      "step": 1073,
+      "total_step": 4200,
+      "time_elapsed": "29:42",
+      "accuracy": 0.7973,
+      "scores": {
+        "accuracy": 0.7973
+      },
+      "learning_rate": 9.157696992111935e-05,
+      "loss": 0.39511876044104666
+    },
+    {
+      "epoch": 3,
+      "step": 1173,
+      "total_step": 4300,
+      "time_elapsed": "30:24",
+      "accuracy": 0.7674,
+      "scores": {
+        "accuracy": 0.7674
+      },
+      "learning_rate": 9.094639058037495e-05,
+      "loss": 0.393968956637017
+    },
+    {
+      "epoch": 3,
+      "step": 1273,
+      "total_step": 4400,
+      "time_elapsed": "31:06",
+      "accuracy": 0.8102,
+      "scores": {
+        "accuracy": 0.8102
+      },
+      "learning_rate": 9.029538942431998e-05,
+      "loss": 0.39221443299034514
+    },
+    {
+      "epoch": 3,
+      "step": 1373,
+      "total_step": 4500,
+      "time_elapsed": "31:48",
+      "accuracy": 0.8256,
+      "scores": {
+        "accuracy": 0.8256
+      },
+      "learning_rate": 8.962429113664913e-05,
+      "loss": 0.39205066987694265
+    },
+    {
+      "epoch": 3,
+      "step": 1473,
+      "total_step": 4600,
+      "time_elapsed": "32:31",
+      "accuracy": 0.8252,
+      "scores": {
+        "accuracy": 0.8252
+      },
+      "learning_rate": 8.893343042440469e-05,
+      "loss": 0.39004231696212954
+    },
+    {
+      "epoch": 4,
+      "step": 10,
+      "total_step": 4700,
+      "time_elapsed": "33:13",
+      "accuracy": 0.767,
+      "scores": {
+        "accuracy": 0.767
+      },
+      "learning_rate": 8.822315185104323e-05,
+      "loss": 0.38599291714754974
+    },
+    {
+      "epoch": 4,
+      "step": 110,
+      "total_step": 4800,
+      "time_elapsed": "33:55",
+      "accuracy": 0.8293,
+      "scores": {
+        "accuracy": 0.8293
+      },
+      "learning_rate": 8.749380966458607e-05,
+      "loss": 0.34799929782077
+    },
+    {
+      "epoch": 4,
+      "step": 210,
+      "total_step": 4900,
+      "time_elapsed": "34:36",
+      "accuracy": 0.8156,
+      "scores": {
+        "accuracy": 0.8156
+      },
+      "learning_rate": 8.674576762093987e-05,
+      "loss": 0.31590076645403675
+    },
+    {
+      "epoch": 4,
+      "step": 310,
+      "total_step": 5000,
+      "time_elapsed": "35:18",
+      "accuracy": 0.7795,
+      "scores": {
+        "accuracy": 0.7795
+      },
+      "learning_rate": 8.597939880247512e-05,
+      "loss": 0.3097190381629674
+    },
+    {
+      "epoch": 4,
+      "step": 410,
+      "total_step": 5100,
+      "time_elapsed": "36:00",
+      "accuracy": 0.7853,
+      "scores": {
+        "accuracy": 0.7853
+      },
+      "learning_rate": 8.519508543195304e-05,
+      "loss": 0.30397261552276983
+    },
+    {
+      "epoch": 4,
+      "step": 510,
+      "total_step": 5200,
+      "time_elapsed": "36:42",
+      "accuracy": 0.8109,
+      "scores": {
+        "accuracy": 0.8109
+      },
+      "learning_rate": 8.43932186818939e-05,
+      "loss": 0.30011207810120105
+    },
+    {
+      "epoch": 4,
+      "step": 610,
+      "total_step": 5300,
+      "time_elapsed": "37:25",
+      "accuracy": 0.8296,
+      "scores": {
+        "accuracy": 0.8296
+      },
+      "learning_rate": 8.357419847948152e-05,
+      "loss": 0.29690802858230914
+    },
+    {
+      "epoch": 4,
+      "step": 710,
+      "total_step": 5400,
+      "time_elapsed": "38:07",
+      "accuracy": 0.7736,
+      "scores": {
+        "accuracy": 0.7736
+      },
+      "learning_rate": 8.273843330710159e-05,
+      "loss": 0.2989871275575855
+    },
+    {
+      "epoch": 4,
+      "step": 810,
+      "total_step": 5500,
+      "time_elapsed": "38:49",
+      "accuracy": 0.8344,
+      "scores": {
+        "accuracy": 0.8344
+      },
+      "learning_rate": 8.1886339998613e-05,
+      "loss": 0.2998327090325691
+    },
+    {
+      "epoch": 4,
+      "step": 910,
+      "total_step": 5600,
+      "time_elapsed": "39:31",
+      "accuracy": 0.8253,
+      "scores": {
+        "accuracy": 0.8253
+      },
+      "learning_rate": 8.101834353145399e-05,
+      "loss": 0.2980898749553542
+    },
+    {
+      "epoch": 4,
+      "step": 1010,
+      "total_step": 5700,
+      "time_elapsed": "40:13",
+      "accuracy": 0.8351,
+      "scores": {
+        "accuracy": 0.8351
+      },
+      "learning_rate": 8.013487681468663e-05,
+      "loss": 0.29863640845824185
+    },
+    {
+      "epoch": 4,
+      "step": 1110,
+      "total_step": 5800,
+      "time_elapsed": "40:55",
+      "accuracy": 0.8214,
+      "scores": {
+        "accuracy": 0.8214
+      },
+      "learning_rate": 7.92363804730856e-05,
+      "loss": 0.29950564112564554
+    },
+    {
+      "epoch": 4,
+      "step": 1210,
+      "total_step": 5900,
+      "time_elapsed": "41:38",
+      "accuracy": 0.8327,
+      "scores": {
+        "accuracy": 0.8327
+      },
+      "learning_rate": 7.832330262737866e-05,
+      "loss": 0.29806495308383846
+    },
+    {
+      "epoch": 4,
+      "step": 1310,
+      "total_step": 6000,
+      "time_elapsed": "42:21",
+      "accuracy": 0.8396,
+      "scores": {
+        "accuracy": 0.8396
+      },
+      "learning_rate": 7.739609867074855e-05,
+      "loss": 0.29568197593536205
+    },
+    {
+      "epoch": 4,
+      "step": 1410,
+      "total_step": 6100,
+      "time_elapsed": "43:04",
+      "accuracy": 0.8261,
+      "scores": {
+        "accuracy": 0.8261
+      },
+      "learning_rate": 7.645523104170791e-05,
+      "loss": 0.2942269513743892
+    },
+    {
+      "epoch": 4,
+      "step": 1510,
+      "total_step": 6200,
+      "time_elapsed": "43:46",
+      "accuracy": 0.8212,
+      "scores": {
+        "accuracy": 0.8212
+      },
+      "learning_rate": 7.550116899346027e-05,
+      "loss": 0.29715387948217337
+    },
+    {
+      "epoch": 5,
+      "step": 47,
+      "total_step": 6300,
+      "time_elapsed": "44:28",
+      "accuracy": 0.841,
+      "scores": {
+        "accuracy": 0.841
+      },
+      "learning_rate": 7.45343883598622e-05,
+      "loss": 0.20206297934055328
+    }
+  ],
+  "best_score": 0.841,
+  "best_epoch": 5,
+  "best_step": 6300,
+  "training_time": "44:28",
+  "best_metrics": {
+    "accuracy_at_best": 0.841
+  }
+}

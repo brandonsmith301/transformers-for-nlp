@@ -1,0 +1,21 @@
+defaults:
+- override /hydra/job_logging: disabled
+- override /hydra/hydra_logging: disabled
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .
+
+seed: 330
+data_path: "./input"
+
+models:
+- LogisticRegression
+- MultinomialNB
+- LinearSVC
+- RandomForestClassifier
+
+outputs:
+  results_dir: "outputs/traditional/traditional"
+  log_file: "outputs/traditional/traditional_log.json"

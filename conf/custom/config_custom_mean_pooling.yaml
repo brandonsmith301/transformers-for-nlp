@@ -1,0 +1,92 @@
+seed: 330
+
+model:
+    pretrained_model_path: weights/pretrained
+    max_seq_len: 512
+    vocab_size: 30522
+    n_layer: 12
+    n_head: 12
+    n_embd: 768
+    dropout: 0.1
+    bias: true
+    num_classes: 2
+
+    # MLM configuration
+    mlm_probability: 0.15
+
+    # RoPE configuration
+    rotary_dim: 768
+    rope_theta: 10000.0
+    original_seq_len: 512
+    rope_factor: 1.0
+    beta_fast: 32.0
+    beta_slow: 1.0
+
+    pad_token_id: 0
+    mask_token_id: 103
+    contrastive_weight: 0.1
+
+    pooling_type: "MeanPooling" # MeanPooling, LSTMPooling, GRUPooling, AttentionPooling, WeightedLayerPooling, ConcatPooling, WKPooling
+
+    lstm_pooling:
+        hidden_size: 768
+        dropout_rate: 0.1
+        bidirectional: true
+
+    gru_pooling:
+        hidden_size: 768
+        dropout_rate: 0.1
+        bidirectional: true
+
+    weighted_pooling:
+        layer_start: 9
+        layer_weights: null
+
+    concat_pooling:
+        n_layers: 4
+
+    attention_pooling:
+        hiddendim_fc: 768
+        dropout: 0.1
+
+    mean_pooling:
+        attention_mask_handling: true 
+    
+    mean_max_pooling:
+        output_concat: true  
+    
+    max_pooling:
+        masked_value: -1e4  
+    
+    min_pooling:
+        masked_value: 1e4  
+    
+    gem_text_pooling:
+        p: 3.0  
+        eps: 1e-6  
+        dim: 1  
+
+dataset:
+    tokenizer_path: "bert-base-uncased"
+    use_fast: true
+    padding_side: "right"
+    truncation_side: "right"
+    max_length: 512
+
+training:
+    learning_rate: 3e-5
+    betas: [ 0.9, 0.999 ]
+    weight_decay: 0.01
+    batch_size: 4
+    num_epochs: 10
+    gradient_accumulation_steps: 4
+    max_grad_norm: 1.0
+    use_mask_aug: false
+    mask_aug_prob: 0.15
+    warmup_pct: 0.05
+    save_trigger: 0.0
+    eval_frequency: 100
+    patience: 10
+
+outputs:
+    model_dir: outputs/custom/custom_mean_pooling
