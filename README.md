@@ -1,4 +1,6 @@
-This repository implements and evaluates different models for sentiment analysis on the IMDB movie review dataset, comparing traditional machine learning methods with modern deep learning. It was the submission for 7.2—Transformers for the NLP HD task for SIT330.
+This repository implements and evaluates different models for sentiment analysis on the IMDB movie review dataset, comparing traditional machine learning methods with modern deep learning. 
+
+It was the submission for 7.2—Transformers for the NLP HD task for SIT330.
 
 # Section 1: Setup
 
